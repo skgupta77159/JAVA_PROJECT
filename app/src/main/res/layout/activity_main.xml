@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.cobam/tools"
     android:layout_width="match_parent"
     android:background="@color/background"
-
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.codinginflow.tictactoe.MainActivity">
@@ -33,7 +32,9 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="33dp"
-            android:text="reset" />
+            android:text="reset"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="33dp" />
     </RelativeLayout>
     <LinearLayout
         android:padding="20dp"
