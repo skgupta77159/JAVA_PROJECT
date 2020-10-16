@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
     private void updatePointsText() {
-        textViewPlayer1.setText("Player 1: " + player1Points);
-        textViewPlayer2.setText("Player 2: " + player2Points);
+        textViewPlayer1.setText(String.valueOf(player1Points));
+        textViewPlayer2.setText(String.valueOf(player2Points));
     }
     private void resetBoard() {
         for (int i = 0; i < 3; i++) {
