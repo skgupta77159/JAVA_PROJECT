@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resetGame();
             }
         });
+        Button buttonquit = findViewById(R.id.button_quit);
+        buttonquit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exit();
+            }
+        });
     }
     @Override
     public void onClick(View v) {
@@ -127,6 +134,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player2Points = 0;
         updatePointsText();
         resetBoard();
+    }
+    private void exit()
+    {
+        finish();
+        System.exit(0);
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
