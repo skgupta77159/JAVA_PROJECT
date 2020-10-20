@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.cobam/tools"
     android:layout_width="match_parent"
-    android:background=""
     android:layout_height="match_parent"
+    android:background=""
     android:orientation="vertical"
-    tools:context="com.codinginflow.tictactoe.MainActivity">
+    tools:context=".userinfo">
     <LinearLayout
         android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -39,8 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textSize="30dp"
-                android:text="Name"
-
+                android:text="Name(0-9 Characters)"
                 android:gravity="center_horizontal"/>
 
 
@@ -67,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:textSize="30dp"
-            android:text="Name"
+            android:text="Name(0-9Characters)"
 
             android:gravity="center_horizontal" />
     </LinearLayout>
@@ -86,5 +84,5 @@
             android:text="submit"
             android:textSize="30dp"
             android:gravity="center_horizontal" />
-    </LinearLayout>
+</LinearLayout>
 
