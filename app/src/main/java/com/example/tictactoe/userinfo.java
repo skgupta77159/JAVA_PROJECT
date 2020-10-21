@@ -21,14 +21,26 @@ public static final  String ply1=" com.example.tictactoe";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
 
-       Button  button;
-        button = (Button) findViewById(R.id.submit);
-        button.setOnClickListener(new View.OnClickListener() {
+       Button  button1;
+        button1 = (Button) findViewById(R.id.button_st);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openact();
             }
         });
+        Button button2 = findViewById(R.id.button_qt);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exit();
+            }
+
+            private void exit() {
+
+            }
+        });
+
     }
         public  void openact() {
             EditText player1=(EditText)findViewById(R.id.player1name);
