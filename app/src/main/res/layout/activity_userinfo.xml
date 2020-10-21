@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     android:background="@color/background"
     tools:context=".userinfo">
     <LinearLayout
         android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
     <TextView
         android:layout_marginTop="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/font"
-        android:text="Players Detail"
-        android:textSize="40dp"
+        android:text="PLAYERS DETAIL"
+        android:textSize="35dp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal" />
@@ -27,10 +27,8 @@
         android:textColor="@color/font"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
-
-        >
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp">
 
         <TextView
             android:textColor="@color/font"
@@ -41,7 +39,7 @@
             android:gravity="center_horizontal"
             android:text="Player 1"
             android:textAlignment="center"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
@@ -49,22 +47,27 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/player1name"
-            android:textColor="@color/font"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             android:layout_marginBottom="10dp"
-            android:text="Name(0-9 Character)"
-            android:textSize="30dp"
-            />
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/block_gradient"
+            android:hint="Name (0-9) Characters"
+            android:singleLine="true"
+            android:paddingStart="25dp"
+            android:paddingLeft="1dp"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="#A89F9F" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="10dp"
         >
         <TextView
             android:layout_width="match_parent"
@@ -75,7 +78,7 @@
             android:gravity="center_horizontal"
             android:text="Player 2"
             android:textAlignment="center"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
@@ -84,15 +87,20 @@
         android:textColor="@color/font"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/player2name"
-            android:textColor="@color/font"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Name(0-9 Character)"
-            android:textSize="30dp"
-            />
+            android:singleLine="true"
+            android:background="@drawable/block_gradient"
+            android:hint="Name (0-9) Characters"
+            android:paddingStart="25dp"
+            android:paddingLeft="1dp"
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"

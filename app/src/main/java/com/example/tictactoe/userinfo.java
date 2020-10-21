@@ -1,4 +1,4 @@
-      package com.example.tictactoe;
+package com.example.tictactoe;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,15 +13,16 @@ import android.widget.Toast;
 import static java.lang.Thread.sleep;
 
 public class userinfo extends AppCompatActivity {
-public static final  String ply1=" com.example.tictactoe";
-    public static final  String ply2=" com.example.tictactoe";
-    @SuppressLint("WrongViewCast")
+
+    EditText player1, player2;
+    Button button1, button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
-
-       Button  button1;
+        player1 = (EditText) findViewById(R.id.player1name);
+        player2 = (EditText) findViewById(R.id.player2name);
+        button2 = (Button) findViewById(R.id.button_qt);
         button1 = (Button) findViewById(R.id.button_st);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +30,7 @@ public static final  String ply1=" com.example.tictactoe";
                 openact();
             }
         });
-        Button button2 = findViewById(R.id.button_qt);
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,32 +43,26 @@ public static final  String ply1=" com.example.tictactoe";
         });
 
     }
-        public  void openact() {
-            EditText player1=(EditText)findViewById(R.id.player1name);
-            EditText player2=(EditText)findViewById(R.id.player2name);
+    
+    public void openact() {
             String text1=player1.getText().toString();
             String text2=player2.getText().toString();
-            int size1=text1.length();
-            int size2=text2.length();
-            if(size1==0&&size2==0)
+            if(text1.length()==0 && text2.length()==0)
             {
                 Toast.makeText(this, "Please Enter the Player Name(0-9 Characters)", Toast.LENGTH_SHORT).show();
             }
-            Intent in =new Intent(userinfo.this,MainActivity.class);
-            if (size1>9 && size2>9)
+            if(text1.length()>=9 || text2.length()>=9)
             {
                 Toast.makeText(this, "Please Enter Valid Player Name(0-9 Characters)", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                in=in.putExtra(ply1,text1);
-                in= in.putExtra(ply2,text2);
+                Intent in =new Intent(userinfo.this,MainActivity.class);
+                in=in.putExtra("ply1",text1);
+                in=in.putExtra("ply2",text2);
                 startActivity(in);
             }
-
-            Intent intent=new Intent(this,MainActivity.class);
-            startActivity(intent);
-        }
+    }
 
 
 

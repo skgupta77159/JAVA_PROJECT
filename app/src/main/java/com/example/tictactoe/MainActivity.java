@@ -14,13 +14,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int player1Points;
     private int player2Points;
     private TextView textViewPlayer1;
-    private TextView textViewPlayer2;
+    private TextView textViewPlayer2, tvPlayer1, tvPlayer2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String pl1 = getIntent().getStringExtra("ply1");
+        String pl2 = getIntent().getStringExtra("ply2");
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
+        tvPlayer1 = findViewById(R.id.tv_1);
+        tvPlayer2 = findViewById(R.id.tv_2);
+        tvPlayer1.setText(pl1.toUpperCase());
+        tvPlayer2.setText(pl2.toUpperCase());
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 String buttonID = "button_" + i + j;

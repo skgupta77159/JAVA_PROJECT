@@ -6,19 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
-    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:background="@color/background"
     tools:context=".Splash">
 
 
     <ImageView
-        android:id="@+id/imageView"
-android:contentDescription="@string/wlcmto"
-        android:layout_width="match_parent"
+        android:src="@drawable/splash"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        app:srcCompat="@drawable/tic" />
+        android:layout_margin="50dp"
+        android:layout_width="match_parent"/>
 </RelativeLayout>
 
 
