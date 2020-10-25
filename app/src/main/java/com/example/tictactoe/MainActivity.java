@@ -3,8 +3,12 @@ package com.example.tictactoe;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -15,18 +19,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int player2Points;
     private TextView textViewPlayer1;
     private TextView textViewPlayer2, tvPlayer1, tvPlayer2;
+    String pl1;
+    String pl2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String pl1 = getIntent().getStringExtra("ply1");
-        String pl2 = getIntent().getStringExtra("ply2");
+        pl1 = getIntent().getStringExtra("ply11");
+        pl2 = getIntent().getStringExtra("ply22");
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
         tvPlayer1 = findViewById(R.id.tv_1);
         tvPlayer2 = findViewById(R.id.tv_2);
         tvPlayer1.setText(pl1.toUpperCase());
         tvPlayer2.setText(pl2.toUpperCase());
+
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 String buttonID = "button_" + i + j;
@@ -108,13 +118,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void player1Wins() {
         player1Points++;
-        Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
+        showToast(pl1);
+        //Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
     private void player2Wins() {
         player2Points++;
-        Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
+        showToast(pl2);
+        //Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
@@ -161,5 +173,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Points = savedInstanceState.getInt("player1Points");
         player2Points = savedInstanceState.getInt("player2Points");
         player1Turn = savedInstanceState.getBoolean("player1Turn");
+    }
+
+    public void showToast(String plName) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.cus_toast));
+        TextView toastText = layout.findViewById(R.id.textView);
+        ImageView toastImage = layout.findViewById(R.id.imageView);
+        toastText.setText(plName);
+        toastImage.setImageResource(R.drawable.picture);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 }
