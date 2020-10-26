@@ -17,7 +17,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(1500);
+                    sleep(1600);
                     Intent in= new Intent(Splash.this,userinfo.class);
                     startActivity(in);
                     finish();

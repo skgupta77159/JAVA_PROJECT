@@ -34,11 +34,7 @@ public class userinfo extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                exit();
-            }
-
-            private void exit() {
-
+              finish();
             }
         });
 
@@ -47,25 +43,21 @@ public class userinfo extends AppCompatActivity {
     public void openact() {
             String text1=player1.getText().toString();
             String text2=player2.getText().toString();
-            if(text1.length()==0 && text2.length()==0)
+            if(text1.length()==0 || text2.length()==0)
             {
                 Toast.makeText(this, "Please Enter the Player Name(0-9 Characters)", Toast.LENGTH_SHORT).show();
             }
-            if(text1.length()>=9 || text2.length()>=9)
+            else if(text1.length()>=9 || text2.length()>=9)
             {
                 Toast.makeText(this, "Please Enter Valid Player Name(0-9 Characters)", Toast.LENGTH_SHORT).show();
             }
             else
             {
                 Intent in =new Intent(userinfo.this,MainActivity.class);
-                in=in.putExtra("ply1",text1);
-                in=in.putExtra("ply2",text2);
+                in=in.putExtra("ply11",text1);
+                in=in.putExtra("ply22",text2);
                 startActivity(in);
             }
     }
-
-
-
-
 }
 
