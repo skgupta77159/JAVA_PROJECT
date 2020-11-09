@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
+    android:gravity="center"
     tools:context=".userinfo">
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,9 +17,9 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/font"
-        android:text="PLAYERS DETAIL"
-        android:textSize="35dp"
-        android:textStyle="bold"
+        android:text="TIC TAC TOE"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal" />
     </LinearLayout>
@@ -39,8 +40,7 @@
             android:gravity="center_horizontal"
             android:text="Player 1"
             android:textAlignment="center"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="25dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -78,8 +78,7 @@
             android:gravity="center_horizontal"
             android:text="Player 2"
             android:textAlignment="center"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="25dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -106,8 +105,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:padding="2dp">
+    android:padding="2dp"
+    android:gravity="center">
     <Button
         android:layout_marginTop="10dp"
         android:id="@+id/button_st"
@@ -121,7 +120,19 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/button_gradient"/>
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/button_rules"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:text="Game Rules"
+        android:clickable="true"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_gradient"/>
+    <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/button_qt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -134,4 +145,4 @@
         android:background="@drawable/button_gradient"/>
 </LinearLayout>
 
-        </LinearLayout>
+</LinearLayout>

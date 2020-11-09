@@ -15,13 +15,14 @@ import static java.lang.Thread.sleep;
 public class userinfo extends AppCompatActivity {
 
     EditText player1, player2;
-    Button button1, button2;
+    Button button1, button2, button_rules;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
         player1 = (EditText) findViewById(R.id.player1name);
         player2 = (EditText) findViewById(R.id.player2name);
+        button_rules = (Button) findViewById(R.id.button_rules);
         button2 = (Button) findViewById(R.id.button_qt);
         button1 = (Button) findViewById(R.id.button_st);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,13 @@ public class userinfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               finish();
+            }
+        });
+        button_rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in =new Intent(userinfo.this, rules_activity.class);
+                startActivity(in);
             }
         });
 
