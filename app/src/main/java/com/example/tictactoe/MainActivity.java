@@ -1,5 +1,6 @@
 package com.example.tictactoe;
 
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,13 +12,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button[][] buttons = new Button[3][3];
     private boolean player1Turn = true;
     private int roundCount;
     private int player1Points;
     private int player2Points;
-    private TextView textViewPlayer1;
+    private TextView textViewPlayer1, timer;
     private TextView textViewPlayer2, tvPlayer1, tvPlayer2;
     String pl1;
     String pl2;
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pl2 = getIntent().getStringExtra("ply22");
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
+        timer = findViewById(R.id.timer);
         tvPlayer1 = findViewById(R.id.tv_1);
         tvPlayer2 = findViewById(R.id.tv_2);
         tvPlayer1.setText(pl1.toUpperCase());
@@ -59,7 +65,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 exit();
             }
         });
+
+        start_timer();
+
     }
+
+    public void start_timer() {
+        long duration = TimeUnit.SECONDS.toMillis(10);
+        CountDownTimer cTimer = new CountDownTimer(duration, 1000) {
+            @Override
+            public void onTick(long l) {
+                String sDuration = String.format(Locale.ENGLISH,"%02d",
+                        TimeUnit.MILLISECONDS.toSeconds(l),
+                        TimeUnit.MILLISECONDS.toSeconds(l) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MICROSECONDS.toSeconds(l)));
+                timer.setText(sDuration);
+            }
+
+            @Override
+            public void onFinish() {
+                timer.setVisibility(View.GONE);
+
+            }
+        }.start();
+    }
+
     @Override
     public void onClick(View v) {
         if (!((Button) v).getText().toString().equals("")) {
@@ -67,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (player1Turn) {
             ((Button) v).setText("X");
+            
         } else {
             ((Button) v).setText("O");
         }

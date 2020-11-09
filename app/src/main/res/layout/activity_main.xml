@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.cobam/tools"
     android:layout_width="match_parent"
     android:background="@color/background"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.codinginflow.tictactoe.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="TIC TAC TOE"
+            android:textColor="#FFDD00"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timer"
+            android:textSize="30sp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="123"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp" />
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +46,7 @@
             android:text="Player 1:"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
+
         <TextView
             android:id="@+id/tv_2"
             android:layout_width="wrap_content"
@@ -51,6 +75,7 @@
             android:text="0"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
+
         <TextView
             android:id="@+id/text_view_p2"
             android:layout_width="wrap_content"

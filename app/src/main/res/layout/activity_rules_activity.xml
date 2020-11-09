@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:padding="15dp"
+        android:gravity="center"
+        android:background="@drawable/border">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RULES:"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. The game is played on a grid that's 3 squares by 3 squares.
+            \n\n2. You are X, your friend is O. Players take turns putting their marks in empty squares.
+            \n\n3. Players will get only 10 seconds for putting their marks in empty squares.
+            \n\n4. If the Current will not mark on empty squares within a 10 second then the other player will be winner and awarded with 1 point
+            \n\n5. The first player to get 3 of his/her marks in a row (up, down, across, or diagonally) is the winner.
+            \n\n6. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie."
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ABOUT US"
+            android:background="@drawable/border"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mentor"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:text="Prof. Vishwajit Gaikwad"
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="\nDeveloped By:\n
+            \nAkash Yadav\n
+            \nSushil Kumar Gupta\n
+            \nRaunak Kumar Pandey\n
+            \nPrasad Bhange\n"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to Home"
+            android:paddingStart="15dp"
+            android:background="@drawable/border"
+            android:paddingEnd="15dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+</ScrollView>
