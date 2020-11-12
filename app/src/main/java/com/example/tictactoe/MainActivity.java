@@ -1,7 +1,11 @@
 package com.example.tictactoe;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -22,12 +26,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int roundCount;
     private int player1Points;
     private int player2Points;
-    private TextView textViewPlayer1, timer;
+    private TextView textViewPlayer1, timer, name;
+    Button button1,button2;
     private TextView textViewPlayer2, tvPlayer1, tvPlayer2;
+    Dialog dialog_box;
     String pl1;
     String pl2;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPlayer2 = findViewById(R.id.tv_2);
         tvPlayer1.setText(pl1.toUpperCase());
         tvPlayer2.setText(pl2.toUpperCase());
+
+
+        dialog_box = new Dialog(MainActivity.this);
+        dialog_box.setContentView(R.layout.activity_custom_dialog);
+        dialog_box.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_box.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+        dialog_box.setCancelable(false);
+
+        name = dialog_box.findViewById(R.id.text_v);
+        button1 = dialog_box.findViewById(R.id.button_1);
+        button2 = dialog_box.findViewById(R.id.button_2);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in =new Intent(MainActivity.this,MainActivity.class);
+                in=in.putExtra("ply11",pl1);
+                in=in.putExtra("ply22",pl2);
+                startActivity(in);
+                dialog_box.dismiss();
+                finish();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         for (int i = 0; i < 3; i++) {
@@ -68,26 +105,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         start_timer();
 
+
+
     }
 
     public void start_timer() {
-        long duration = TimeUnit.SECONDS.toMillis(10);
+        long duration = TimeUnit.MINUTES.toMillis(1);
         CountDownTimer cTimer = new CountDownTimer(duration, 1000) {
             @Override
             public void onTick(long l) {
-                String sDuration = String.format(Locale.ENGLISH,"%02d",
-                        TimeUnit.MILLISECONDS.toSeconds(l),
+                String sDuration = String.format(Locale.ENGLISH,"%02d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes(l),
                         TimeUnit.MILLISECONDS.toSeconds(l) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MICROSECONDS.toSeconds(l)));
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MICROSECONDS.toMinutes(l)));
                 timer.setText(sDuration);
             }
 
             @Override
             public void onFinish() {
                 timer.setVisibility(View.GONE);
+                if(player1Points>player2Points){
+                    ShowDialogBox(pl1,player1Points);
+                }
+                else if(player1Points==player2Points){
+                    name.setText("Match Draw!!");
+                    dialog_box.show();
+                }
+                else{
+                    ShowDialogBox(pl2,player2Points);
+                }
 
             }
         }.start();
+    }
+
+    public void ShowDialogBox(String plName, int plScore){
+        name.setText("Congratulation!!\n" + plName.toUpperCase() + " \nis final winner with winning Score " + Integer.toString(plScore));
+        dialog_box.show();
     }
 
     @Override
@@ -211,11 +265,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.cus_toast));
         TextView toastText = layout.findViewById(R.id.textView);
         ImageView toastImage = layout.findViewById(R.id.imageView);
-        toastText.setText(plName);
+        toastText.setText(plName.toUpperCase());
         toastImage.setImageResource(R.drawable.picture);
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
     }
