@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/g_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".rules_activity"></activity>
+        <activity android:name=".rules_activity" />
         <activity android:name=".userinfo" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Splash">
