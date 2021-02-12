@@ -2,27 +2,30 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:padding="15dp"
+        android:background="@drawable/border"
         android:gravity="center"
-        android:background="@drawable/border">
+        android:orientation="vertical"
+        android:padding="15dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RULES:"
             android:layout_marginTop="20dp"
             android:background="@drawable/border"
-            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="30dp"/>
+            android:text="RULES:"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="1. The game is played on a grid that's 3 squares by 3 squares.
             \n\n2. There is no undo option while playing .it means you can't change your position once selected.
             \n\n3. The Game will be over after 1 Minutes of start, final Winner will be declared with player having highest score.
@@ -36,51 +39,53 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ABOUT US"
+            android:layout_marginTop="20dp"
             android:background="@drawable/border"
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="30dp"/>
+            android:text="ABOUT US"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
             android:text="Mentor"
-            android:layout_marginTop="20dp"
             android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="25dp"
             android:text="Prof. Vishwajit Gaikwad"
-            />
+            android:textSize="25dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="20dp"
             android:text="\nDeveloped By:\n
             \nAkash Yadav\n
             \nSushil Kumar Gupta\n
             \nRaunak Kumar Pandey\n
             \nPrasad Bhange\n"
-            />
+            android:textSize="20dp" />
+
         <Button
             android:id="@+id/back_homes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back to Home"
-            android:paddingStart="15dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/border"
+            android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:layout_marginBottom="20dp"/>
+            android:text="Back to Home" />
     </LinearLayout>
 
 </ScrollView>
