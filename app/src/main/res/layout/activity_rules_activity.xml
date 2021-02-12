@@ -2,84 +2,89 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:padding="15dp"
+        android:background="@drawable/border"
         android:gravity="center"
-        android:background="@drawable/border">
+        android:orientation="vertical"
+        android:padding="15dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RULES:"
             android:layout_marginTop="20dp"
             android:background="@drawable/border"
-            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="30dp"/>
+            android:text="RULES:"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="1. The game is played on a grid that's 3 squares by 3 squares.
             \n\n2. The Game will be Over after 1 Minutes of start, final Winner will be declared with player having highest score
             \n\n3. If the Scores Of both the player are equal then the game will be declared as Draw
             \n\n4. You are X, your friend is O. Players take turns putting their marks in empty squares.
             \n\n5. The first player to get 3 of either X or O in a row (up, down, across, or diagonally) is the winner.
             \n\n6. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie."
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ABOUT US"
+            android:layout_marginTop="20dp"
             android:background="@drawable/border"
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
             android:gravity="center_horizontal"
-            android:textSize="30dp"/>
+            android:text="ABOUT US"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
             android:text="Mentor"
-            android:layout_marginTop="20dp"
             android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="25dp"
             android:text="Prof. Vishwajit Gaikwad"
-            />
+            android:textSize="25dp" />
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="20dp"
             android:text="\nDeveloped By:\n
             \nAkash Yadav\n
             \nSushil Kumar Gupta\n
             \nRaunak Kumar Pandey\n
             \nPrasad Bhange\n"
-            />
+            android:textSize="20dp" />
+
         <Button
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back to Home"
-            android:paddingStart="15dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/border"
+            android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:layout_marginBottom="20dp"/>
+            android:text="Back to Home" />
     </LinearLayout>
 
 </ScrollView>
